@@ -101,7 +101,9 @@ class MainActivity : AppCompatActivity() {
 
         val numberList = mutableListOf<Int>().apply {
             for (i in 1..45) {
-                this.add(i)
+                if (i !in pickNumberSet){ //만약 해당숫자가 뽑은 숫자가 아니라면
+                    this.add(i) //그 숫자를 넣는다.
+                }
             }
         }
         
