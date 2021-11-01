@@ -88,7 +88,8 @@ class MainActivity : AppCompatActivity() {
     private fun initAutoRunButtonListener() {
         autoRunButton.setOnClickListener {
             didAutoRun = true
-
+            
+            //(6 - 수동으로 입력한 번호 개수) 만큼 랜덤번호를 불러와 랜덤번호 설정
             getRandomNumber().forEachIndexed { index, value ->
                 numberTextViewList[index].text = value.toString()
                 setNumberAndBackground(index,value)
@@ -101,7 +102,9 @@ class MainActivity : AppCompatActivity() {
 
         val numberList = mutableListOf<Int>().apply {
             for (i in 1..45) {
-                this.add(i)
+                if (i !in pickNumberSet){ //만약 해당숫자가 뽑은 숫자가 아니라면
+                    this.add(i) //그 숫자를 넣는다.
+                }
             }
         }
         
