@@ -76,6 +76,9 @@ if (didAutoRun){
   나머지 추가적으로 뽑아야 할 6-N개는 45개의 번호중 이미 선택한 N개의 번호를 제외한 45-N개를 새로운 리스트에 저장하였습니다. 그 후 shuffle이라는 리스트 내장 메서드를
   사용하여 랜덤으로 썩은뒤 6-N개를 추가적으로 뽑는 형식으로 처리하였습니다.
   ```
+  //수동으로 선택 번호들을 저장할 변수를 set형으로 선언
+  private val pickNumberSet = hashSetOf<Int>()
+  
   // 로또번호 생성하는 함수
     private fun getRandomNumber(): List<Int> {
 
